@@ -1,29 +1,41 @@
-const gameState = {};
+<!DOCTYPE html>
+<html>
+<head>
 
-function preload() {
-  this.load.image('codey', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/codey.png');
-};
+</head>
+<body>
 
-function create() {
-  gameState.codey = this.add.sprite(200, 200, 'codey');
-  gameState.cursors = this.input.keyboard.createCursorKeys();
-};
+    <script>
+      const gameState = {};
 
-function update(){
-  if(gameState.cursors.down.isDown){
-    gameState.codey.y += 1;
-  };
-};
+      function preload() {
+        this.load.image('codey', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/codey.png');
+      };
 
-const config = {
-  width: 300,
-  height: 500,
-  backgroundColor: 0xdda0dd,
-  scene: {
-  preload,
-  create,
-  update
-}
-};
+      function create() {
+        gameState.codey = this.add.sprite(200, 200, 'codey');
+        gameState.cursors = this.input.keyboard.createCursorKeys();
+      };
 
-const game = new Phaser.Game(config);
+      function update(){
+        if(gameState.cursors.down.isDown){
+          gameState.codey.y += 1;
+        };
+      };
+
+      const config = {
+        width: 300,
+        height: 500,
+        backgroundColor: 0xdda0dd,
+        scene: {
+        preload,
+        create,
+        update
+      }
+      };
+
+      const game = new Phaser.Game(config);
+      </script>
+
+</body>
+</html>
