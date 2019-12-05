@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
+    <head>
+        <meta charset="utf-8">
+        <title>New webpage</title>
+    </head>
+    <body>
+    	<script>
+	    	const config = {
+			  width: 400,
+			  height: 500,
+			  backgroundColor: 0xffff77
+			}
 
-</head>
-<body>
+			const game = new Phaser.Game(config)
 
-    <script>
-      const gameState = {};
+			const gameState = {};
 
-      function preload() {
-        this.load.image('codey', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/codey.png');
-      };
+			function preload() {
+			  this.load.image('codey', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/codey.png');
+			};
 
-      function create() {
-        gameState.codey = this.add.sprite(200, 200, 'codey');
-        gameState.cursors = this.input.keyboard.createCursorKeys();
-      };
+			function create() {
+			  gameState.codey = this.add.sprite(200, 200, 'codey');
+			};
 
-      function update(){
-        if(gameState.cursors.down.isDown){
-          gameState.codey.y += 1;
-        };
-      };
+			const config = {
+			  width: 300,
+			  height: 500,
+			  backgroundColor: 0xdda0dd,
+			  scene: {
+			  preload,
+			  create
+			}
+			};
 
-      const config = {
-        width: 300,
-        height: 500,
-        backgroundColor: 0xdda0dd,
-        scene: {
-        preload,
-        create,
-        update
-      }
-      };
+			const game = new Phaser.Game(config);
 
-      const game = new Phaser.Game(config);
-      </script>
+		</script>
 
-</body>
+    </body>
 </html>
